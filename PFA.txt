@@ -1,0 +1,7 @@
+http://ewalaureatnh.pythonanywhere.com/
+
+Student-email :elmamouni@ecolewa.com
+Student-password:Amineamine	
+
+admin-email:hamzad@direwa.com
+admin-password:Adminhamza

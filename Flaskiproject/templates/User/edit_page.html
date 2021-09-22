@@ -1,0 +1,97 @@
+{% extends "Layout_user.html" %}
+{% block edition %}
+<section class="section-1 container">
+   <div class="col-lg-6">
+          <div class="card">
+              <div class="card-header">
+                  <strong>Informations </strong> 
+              </div>
+              <div class="card-body card-block">
+                  <form action="{{url_for('get_data')}}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                      {{ form.hidden_tag() }}
+                      <div class="row form-group mt-2">
+                          <div class="col col-md-3">
+                              {{ form.personal_email.label }}
+                          </div>
+                          <div class="col-12 col-md-9">
+                              {{ form.personal_email (placeholder="Enter Email",class="form-control") }}
+                          </div>
+                      </div>
+                      <div class="row form-group mt-2">
+                          <div class="col col-md-3">
+                              {{ form.dialling_num.label }}
+                          </div>
+                          <div class="col-12 col-md-9">
+                              {{ form.dialling_num (placeholder="Enter your number",class="form-control") }}
+                          </div>
+                      </div>
+                     
+                      <div class="row form-group mt-2">
+                          <div class="col col-md-3">
+                              {{ form.branch.label }}
+                          </div>
+                          <div class="col-12 col-md-9">
+                              {{ form.branch }}
+                          </div>
+                      </div>
+                      <div class="row form-group mt-2">
+                          <div class="col col-md-3">
+                              {{ form.occupation.label }}
+                          </div>
+                          <div class="col-12 col-md-9">
+                              {{ form.occupation (class="form-control") }}
+                          </div>
+                      </div>
+                      <div class="row form-group mt-2">
+                          <div class="col col-md-3">
+                              {{ form.company_name.label }}
+                          </div>
+                          <div class="col-12 col-md-9">
+                              {{ form.company_name (placeholder="...................",class="form-control") }}                                   
+                          </div>
+                      </div>
+                      <div class="row form-group mt-2">
+                          <div class="col col-md-3">
+                              {{ form.linkedin.label }}
+                          </div>
+                          <div class="col-12 col-md-9">
+                              {{ form.linkedin(placeholder="...................",class="form-control") }}
+                          </div>
+                      </div>
+                      <div class="row form-group mt-2">
+                          <div class="col col-md-3">
+                              {{ form.github.label }}
+                          </div>
+                          <div class="col-12 col-md-9">
+                              {{ form.github(placeholder="...................",class="form-control") }}
+                              
+                          </div>
+                      </div>
+                      <div class="row form-group mt-2">
+                          <div class="col col-md-3">
+                              {{ form.website.label }}
+                          </div>
+                          <div class="col-12 col-md-9">
+                              {{ form.website(placeholder="...................",class="form-control") }}
+                          </div>
+                      </div>
+                     
+                      
+                      <div class="row form-group mt-3">
+                          <div class="col col-md-3">
+                              <label for="file-multiple-input" class=" form-control-label">Upload Files </label>
+                          </div>
+                          <div class="col-12 col-md-9">
+                              <input type="file" id="file-multiple-input" name="file-multiple-input" multiple="" class="form-control-file">
+                          </div>
+                      </div>
+                      <div class="card-footer mt-3">
+                          {{ form.Submitting (class="btn btn-outline-dark  btn-md d-grid gap-2 col-6 mx-auto") }}
+                      </div>
+                  </form>
+              </div>
+              
+          </div>
+   </div>
+</section>
+{% endblock %}

@@ -1,0 +1,129 @@
+admin route
+
+@app.route('/admin')
+def admin():
+   date=datetime.now()
+   elegante_date=date.strftime("%A %d %B %Y")
+   baryear=date.year
+   x=baryear
+   """
+   for temporary use only we will give some dumbass data
+   """
+
+   return render_template('Admin/dashboard.html',date=elegante_date,timeline=x)
+
+
+'''
+   # date=datetime.now()
+   # baryear=date.year
+use this for line chart representation
+
+'''
+
+_____________________________________layout_admin.html_______________________________
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/style_admin.css')}}">
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <title>Welcome</title>
+   </head>
+   <body>
+      <div class="interface">
+         <nav class="sidebar">
+               <h5 class="infoprof">Welcome back</h5>
+            <menu>
+               <ul>
+                  <li><a href="{#{url_for( 'admin' )}#}">Dashboard</a></li>
+                  <li><a href="{#{url_for( 'admin' )}#}">Contact</a></li>
+                  <li><a href="{#{url_for( 'admin' )}#}">Profiles</a></li>
+                  <li><a href="{#{url_for( 'admin' )}#}">Logout</a></li>
+               </ul>
+            </menu>
+         </nav>
+         <div class="maincont">
+            <div class="dashinfo">
+               <h3>Dashboard</h3>
+               <p>{{ date }}</p>
+            </div>
+            <div class="searchbar">
+               <label for="searchbox">Search</label>
+               <input type="search" name="searchbox" placeholder="Search" id="searchbaer" aria-label="">
+            </div>
+            {% block charts %} {% endblock %}
+      {#<script src="{{url_for('static',filename='js/scriptad.js'}}"></script>#}
+   </body>
+</html>
+________________________________dashboard______________________________________
+{% extends "Layout_Admin.html" %}
+{% block charts %}
+<div class="visualgraph">
+   <div class="chartes">
+      <canvas id="Mychart1"></canvas>
+   </div>
+   <div class="charito">
+      <canvas id="Mychart2"></canvas>
+   </div>
+</div>
+<script type="module">
+const labels = [ "2021","2020","2019" ];
+const data = {
+labels,
+datasets: [{
+   label: 'dev',
+   backgroundColor: 'rgba(255, 99, 132,.3)',
+   data: [22, 27, 25],
+   },
+   {
+      label:'des',
+      backgroundColor: 'rgba(152, 86, 200,0.3)',
+      // borderColor: 'rgb(255, 99, 132)',
+      data: [7, 14, 10],
+   }]
+};
+const config = {
+   type: 'bar',
+   data,
+   options: {}
+};
+   let charte = document.getElementById("Mychart1")
+   let chart=new Chart(charte,config)
+</script>
+
+<script type="module">
+const datia = {
+   labels:["working","freelancing","unemployed"],
+datasets: [
+   // {
+   // label:['blue','yellow','black'],
+   // data: [20,72,350],
+   // backgroundColor: [
+   //    'rgb(194, 137, 68)',
+   //    'rgb(255, 255,00)',
+   //    'rgb(113, 112, 115)',
+   //    ],
+   //    hoveroffset:15
+   // },
+   {
+      label:['i see reeeedd','green','white'],
+      data: [140,200,80],
+      backgroundColor: [
+         'rgb(230, 17, 158)',
+         'rgb(25, 255,100)',
+         'rgb(183, 212, 255)',
+         ],
+         hoveroffset:10
+      }
+   ],
+};
+const configo = {
+   type: 'doughnut',
+   data:datia,
+};
+   let charto = document.getElementById("Mychart2")
+   let cheart=new Chart(charto,configo)
+</script>
+{% endblock %}

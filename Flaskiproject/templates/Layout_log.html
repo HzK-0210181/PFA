@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/style-log.css')}}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="icon" href="{{url_for('static',filename='icons/logo.ico')}}" type="image/x-icon">
+      <title>Log in eWA</title>
+   </head>
+
+   <body>
+      <div class="main">
+         <legend class="sign">Login</legend>
+         <form class="form1" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                  {% if form.email_user.errors %}
+                     {{ form.email_user(class="is_invalid") }}
+                     {% for error in form.email_user.errors%}
+                        <span>{{ error }}</span>
+                     {% endfor %}
+                  {% else %}
+                     {{ form.email_user(class="un",placeholder="Email") }}
+                  {% endif %}
+            </div>
+            <div class="form-group">
+                  {% if form.password.errors %}
+                  {{ form.password(class="is_invalid") }}
+                     {% for error in form.password.errors%}
+                        <span>{{ error }}</span>
+                     {% endfor %}
+                  {% else %}
+                     {{ form.password(class="pass",placeholder="Password") }}
+                  {% endif %}
+            </div>
+            <div class="remember_me">
+               {{ form.remember }}
+               {{ form.remember.label }}
+            </div>
+            <div class="form-group-submit">
+               {{ form.submit(value="log in",class="submit") }}
+            </div>
+         </form>       
+         </div>
+            <p align="center"> eWA ECOLE DU DIGITAL 2021.</p>
+   </body>
+</html>

@@ -1,0 +1,132 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: arial, sans-serif;
+}
+
+.header {
+	height: 10%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 25px;
+	background: #262931;
+	color: #fff;
+}
+
+.header i {
+	font-size: 30px;
+	cursor: pointer;
+	color: #fff;
+}
+.header i:hover {
+	color: #c4fa30;
+}
+
+.side-bar {
+	width: 250px;
+	background: #262931;
+	min-height: 100vh;
+	transition: 500ms width;
+}
+.body {
+	display: flex;
+	background-color: rgb(241, 241, 241);
+}
+.section-1 {
+	width: 100%;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.side-bar ul {
+	margin-top: 20px;
+	list-style: none;
+	
+}
+.side-bar ul li {
+	font-size: 14px;
+	padding: 15px 0px;
+	/* padding-left: 20px; */
+	transition: 500ms background;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.side-bar ul li:hover {
+	background: #181818;
+	
+}
+.side-bar ul li a {
+	text-decoration: none;
+	color: rgb(245, 245, 245);
+	cursor: pointer;
+	letter-spacing: 1px;
+}
+.side-bar ul li a i {
+	display: inline-block;
+	padding-right: 10px;
+	font-size: 23px;
+}
+#navbtn {
+	display: inline-block;
+	margin-left: 50px;
+	font-size: 30px;
+	transition: 500ms color;
+}
+#checkbox {
+	display: none;
+}
+#checkbox:checked ~ .body .side-bar {
+	width: 80px;
+}
+#checkbox:checked ~ .body .side-bar .user-p{
+	visibility: hidden;
+}
+#checkbox:checked ~ .body .side-bar a span{
+	display: none;
+}
+.dashinfo{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
+.tablenames{
+	margin: 10vh 0;
+}
+th,td{
+	border: #262931 solid;
+	padding: 10px;
+	background-color: rgb(235, 235, 233);
+	
+}
+.visualgraph{
+	display:flex;
+	width: 80vw;
+	justify-content: space-around;
+	margin: 0 auto;
+}
+.chartes{
+	padding: 5%;
+	max-width: 30vw;
+	max-height: 50vh;
+}
+#Mychart1{
+	width: 250%;
+	height: 200%;
+}
+.charito{
+	padding: 5%;
+	max-width: 40vw;
+	max-height: 60vh;
+}
+#Mychart2{
+	width: 300%;
+}
+.content{
+	margin: 7vh 0;
+}

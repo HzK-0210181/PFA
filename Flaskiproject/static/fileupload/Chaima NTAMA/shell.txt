@@ -1,0 +1,8 @@
+shell|
+           ->bash: bourne again shell
+           -> CSH: C shell
+           -> KSH: Korn shell
+           -> SH: bourne shell 
+           -> tesh: CSH (ameliore)
+           ->ZSH: plus recent 
+search about these

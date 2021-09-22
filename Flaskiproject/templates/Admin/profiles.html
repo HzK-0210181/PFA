@@ -1,0 +1,70 @@
+{% extends "Layout_admin.html" %}
+{% block profiles %}
+<div class="dashinfo">
+   <h3>Dashboard</h3>
+   <p>{{ date }}</p>
+</div>
+<div class="tablenames">
+   <table class="tablectx table table-dark table-striped table-hover mt-5" >
+      <thead>
+         <tr>
+            <th>Fullname</th>
+            <th>Email</th>
+            <th>Dialling-number</th>
+            <th>Branch</th>
+            <th>Occupation</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for Students in Students %}
+         <tr>
+            <td>
+               {{ Students.fullname }}
+            </td>
+            <td>
+               {{ Students.personal_email }}
+            </td>
+            <td>
+               {{ Students.dialling_num }}
+            </td>
+            <td>
+               {{ Students.branch }}
+            </td>
+            <td>
+               {{ Students.occupation }}
+            </td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+   <table class="tablectx table table-dark table-striped table-hover mt-5" >
+      <thead>
+         <tr>
+            <th>Company</th>
+            <th>Linkedin</th>
+            <th>Github</th>
+            <th>personal website</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for Students in Students %}
+         <tr>
+            <td>
+               {{ Students.company_name }}
+            </td>
+            <td>
+               {{ Students.linkedin }}
+            </td>
+            <td>
+               {{ Students.github }}
+            </td>
+            <td>
+               {{ Students.website }}
+            </td>
+
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+</div>
+{% endblock %}

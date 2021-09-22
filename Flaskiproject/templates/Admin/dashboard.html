@@ -1,0 +1,58 @@
+
+{% extends "Layout_admin.html" %}
+
+{% block charts %}
+<div class="dashinfo">
+   <h3>Dashboard</h3>
+   <p>{{ date }}</p>
+</div>
+<div class="visualgraph">
+   <div class="chartes">
+      <canvas id="Mychart1"></canvas>
+   </div>
+   <div class="charito">
+      <canvas id="Mychart2"></canvas>
+   </div>
+</div>
+<script type="module">
+   const data = {
+      labels : ["Employee", "Freelancer", "Without job"],
+      datasets:[{
+         data:[55,49,12],
+         backgroundColor:[
+            "rgb(196,250,48)",
+            "rgb(116,185,255)",
+            "rgb(214,48,49)"
+         ],
+      }],
+   };
+   const log1={
+      type:"doughnut",
+      data,
+      option:{},
+   };
+
+   const datoa = {
+      labels: [2015,2016,2017,2018,2019,2020,2021,2022],
+      datasets:[{
+         data:[16,40,50,44,50,27,40,33],
+               borderColor: "green",
+               fill: true,
+               },{
+               data: [30,27,20,50,35,40,23,50],
+               borderColor: "blue",
+               fill: true,
+      }],
+   };
+   const log2 ={
+      type:"line",
+      data:datoa,
+   };
+
+   let Chart1=document.getElementById("Mychart1").getContext('2d')
+   let display1 = new Chart(Chart1,log1)
+   let Chart2=document.getElementById("Mychart2").getContext('2d')
+   let display2 = new Chart(Chart2,log2)
+</script>
+
+{% endblock %}

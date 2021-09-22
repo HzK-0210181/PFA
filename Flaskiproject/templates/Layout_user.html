@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="{{url_for('static',filename='css/style_layout.css')}}">
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <title>Welcome</title>
+</head>
+<body>
+      </nav>
+      <input type="checkbox" id="checkbox">
+      <header class="header">
+         <h2 class="u-name">
+            <img src="{{url_for('static',filename='img/eWA_Logo.png')}}" width="20%" alt="logo">
+            <label for="checkbox">
+               <i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+         </h2>
+      </header>
+<div class="body">
+   <nav class="side-bar">
+      <ul>
+            <li><a href="{{url_for( 'user' )}}">
+               <i class="fa fa-desktop" aria-hidden="true"></i>
+               Dashboard
+            </a>
+         </li>
+            <li><a href="{{url_for( 'get_data' )}}">
+               <i class="fa fa-cog" aria-hidden="true"></i>
+               Edit table
+            </a>
+         </li>
+            <li><a href="{{url_for( 'logout' )}}">
+               <i class="fa fa-power-off" aria-hidden="true"></i>
+               Logout
+            </a>
+         </li>
+      </ul>
+   </nav>
+   <section class="container mt-4">
+      <div class="maincont">
+         {% block content %} {% endblock %}
+         {% block edition %} {% endblock %}
+         </div>
+      </div> 
+   </section>  
+</body>
+</html>
